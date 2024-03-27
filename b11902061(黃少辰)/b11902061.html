@@ -7,12 +7,16 @@
             var x = prompt("你想上NASA嗎?(Yes/No)", "");
             if(x=="Yes"){
                 alert("你不對勁");
+                window.opener = null;
+                window.close();
             }
             else if (x=="No"){
-                alert("停修啦");
+                alert("現在你有空可以做網頁了");
             }
             else{
                 alert("invalid input");
+                window.opener = null;
+                window.close();
             }
         </script>
     </head>
@@ -38,13 +42,13 @@
                         <th> \ </th> <th> Mon. </th> <th> Tue. </th> <th> Wed. </th> <th> Thu. </th> <th> Fri. </th>
                     </tr>
                     <tr>
-                        <td> 9:10-10:00 </td> <td> NASA </td> <td> OS </td> <td> Web程式設計 </td> <td>  </td> <td>  </td>
+                        <td> 9:10-10:00 </td> <td>  </td> <td> OS </td> <td> Web程式設計 </td> <td>  </td> <td>  </td>
                     </tr>
                     <tr>
-                        <td> 10:20-11:10 </td> <td> NASA </td> <td> OS </td> <td> Web程式設計 </td> <td>  </td> <td> 日文一下 </td>
+                        <td> 10:20-11:10 </td> <td>  </td> <td> OS </td> <td> Web程式設計 </td> <td>  </td> <td> 日文一下 </td>
                     </tr>
                     <tr>
-                        <td> 11:20-12:10 </td> <td> NASA </td> <td> OS </td> <td> Web程式設計 </td> <td>  </td> <td> 日文一下 </td>
+                        <td> 11:20-12:10 </td> <td>  </td> <td> OS </td> <td> Web程式設計 </td> <td>  </td> <td> 日文一下 </td>
                     </tr>
                     <tr>
                         <td> 12:20-13:10 </td> <td>  </td> <td>  </td> <td>  </td> <td>  </td> <td> 日文一下 </td>
