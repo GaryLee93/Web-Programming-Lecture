@@ -1,3 +1,4 @@
+/*
 function askAge()
 {
     var x = prompt("你現在幾歲？","");
@@ -10,3 +11,4 @@ function askAge()
     alert("兄弟，你好大");
 }
 window.addEventListener("DOMContentLoaded",askAge());
+*/
