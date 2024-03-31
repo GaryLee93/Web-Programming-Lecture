@@ -30,6 +30,7 @@
     width: 40%;
     margin: 40px;
     position: relative;
+    bottom:-100px
 }
 .music
 {
@@ -55,7 +56,6 @@
 }
 .cirno
 {
-    display: inline-block;
     float: right;
     position: relative;
     right: 150px;
@@ -68,4 +68,26 @@
     width: 100px;
     right: 10px;
     bottom: 10px;
+}
+.shrine
+{
+    background-color:#b3c6ff;
+    width: 25%;
+    border-style: solid;
+    border-width: medium;
+    text-align: center;
+    padding-bottom: 15px;
+}
+.sign
+{
+    font-size: 40px;
+    width: 40%;
+    height: 50%;
+    margin: 10px;
+}
+.button
+{
+    font-size: 24px;
+    width: 125px;
+    height: 50px;
 }
