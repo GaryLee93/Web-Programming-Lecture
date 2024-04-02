@@ -2,53 +2,35 @@
 <html>
     <head>
         <title> 黃少辰的自我介紹網頁 </title>
-        <link rel="stylesheet" type="text/css" href="b11902061.css">
-        <script lang="JavaScript">
-            var x = prompt("你想上NASA嗎?(Yes/No)", "");
-            if(x=="Yes"){
-                alert("你不對勁");
-                window.opener = null;
-                window.close();
-            }
-            else if (x=="No"){
-                alert("現在你有空可以做網頁了");
-            }
-            else{
-                alert("invalid input");
-                window.opener = null;
-                window.close();
-            }
-        </script>
+        <link rel="stylesheet" type="text/css" href="b11902061.css" >
+        <script src="b11902061.js"> </script>
     </head>
-    <body style="background-color: aqua;" >
-        <h1 align="center" style="color: white; text-shadow: 12px 8px 5px black;"> 黃少辰的自我介紹網頁 </h1>
-        <div style="position: relative; left: 100px">
-            <h2> 關於我：</h2>
-            <p> 資工系大二 </p>
-            <p> 這學期修的課：</p>
-            <ul> 
-                <li> OS <i> (心中OS:懶得爬起來去上!!!) </i> </li>
-                <li> NASA <b><i> (硬到爆!!!) </i></b> </li>
-                <li> Web程式設計 </li>
-                <li> 數位視覺特效 </li>
-                <li> 機率 </li>
-                <li> 日文一下 </li>
-                <li> 普通心理學 </li>
-            </ul>
-            <div style="background-color: rgba(255, 255, 255, 0.512); position: absolute; left: 700px">
+    <body style="background-color: rgb(64, 64, 64);" >
+        <p class="mainTitle"> 黃少辰の自我介紹網頁 </p>
+        <div style="margin-left: 100px; margin-right: 100px;">
+            <h1> 關於我：</h1>
+            <img align="right" style="margin-right: 20px" src="MyPhoto.jpg" width="300px">
+            <p class="aboutMe">
+                我是 <u>黃少辰</u> ，20歲，目前資工系大二，是個活網人，
+                因此對於網路/網頁很有興趣，所以來修了這門課。
+                目標是希望能寫出有特色的自我介紹網頁！ 
+            </p>
+
+            <h1> 這學期修的課：</h1>
+            <div class="lectureTime">
                 <h2>上課時間表：</h2>
                 <table border="1">
                     <tr>
                         <th> \ </th> <th> Mon. </th> <th> Tue. </th> <th> Wed. </th> <th> Thu. </th> <th> Fri. </th>
                     </tr>
                     <tr>
-                        <td> 9:10-10:00 </td> <td>  </td> <td> OS </td> <td> Web程式設計 </td> <td>  </td> <td>  </td>
+                        <td> 9:10-10:00 </td> <td class="nasa_col"> NASA </td> <td> OS </td> <td> Web程式設計 </td> <td>  </td> <td>  </td>
                     </tr>
                     <tr>
-                        <td> 10:20-11:10 </td> <td>  </td> <td> OS </td> <td> Web程式設計 </td> <td>  </td> <td> 日文一下 </td>
+                        <td> 10:20-11:10 </td> <td class="nasa_col"> NASA </td> <td> OS </td> <td> Web程式設計 </td> <td>  </td> <td> 日文一下 </td>
                     </tr>
                     <tr>
-                        <td> 11:20-12:10 </td> <td>  </td> <td> OS </td> <td> Web程式設計 </td> <td>  </td> <td> 日文一下 </td>
+                        <td> 11:20-12:10 </td> <td class="nasa_col"> NASA </td> <td> OS </td> <td> Web程式設計 </td> <td>  </td> <td> 日文一下 </td>
                     </tr>
                     <tr>
                         <td> 12:20-13:10 </td> <td>  </td> <td>  </td> <td>  </td> <td>  </td> <td> 日文一下 </td>
@@ -67,10 +49,23 @@
                     </tr>
                 </table>
             </div>
-        </div>
+            <ul id="lesson" style="color: white; margin-bottom: 10px;"> 
+                <li> OS <i> (心中OS:懶得爬起來去上!!!) </i> </li>
+                <li id="nasa"> NASA <b><i> (硬到爆!!!) </i></b> </li> 
+                <input id="withdraw_button" onclick="withdraw_NASA()" type="button" value="停修 NASA">
+                <li> Web程式設計 </li>
+                <li> 數位視覺特效 </li>
+                <li> 機率 </li>
+                <li> 日文一下 </li>
+                <li> 普通心理學 </li>
+            </ul>
+
+            <img style="margin-left: 30px; margin-right: 10px" width="256px" src="https://media1.tenor.com/m/4Wmrjus9r0MAAAAC/%E6%98%9F%E7%88%86%E6%B0%A3%E6%B5%81%E6%96%AC.gif" >
+            <span> ← (當我在趕作業的樣子) </span>
+            <h1> 專長 </h1>
+
+            <p> 最近覺得好聽的歌： <a href="https://youtu.be/-JsJr4zrXWg"> Bookmaker </a> </p>
             
-        
-        <p> 正在聽的歌：<a href="https://youtu.be/-JsJr4zrXWg">Bookmaker </a> </p>
-        <img src="https://media1.tenor.com/m/4Wmrjus9r0MAAAAC/%E6%98%9F%E7%88%86%E6%B0%A3%E6%B5%81%E6%96%AC.gif" >
+        </div>
     </body>
 </html>

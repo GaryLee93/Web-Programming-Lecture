@@ -1,0 +1,46 @@
+h1{
+    color: white;
+    background-color: darkcyan;
+    padding: 10px;
+}
+h2{
+    color: white;
+}
+p{
+    font-size: 18px;
+    color: white;
+}
+span{
+    font-size: 18px;
+    color: white;
+}
+ul{
+    font-size: 18px;
+    color: white;
+    line-height: 1.7;
+}
+.mainTitle{
+    text-align: center;
+    font-size: 64px;
+    font-weight: bold;
+    font-family: 微軟正黑體;
+    color: white;
+    text-shadow: 1px 1px 10px gold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.aboutMe{
+    background-color: rgb(36, 40, 78);
+    height: 300px;
+    margin-left: 25px;
+    margin-right: 440px;
+    padding: 10px;
+}
+.lectureTime{
+    background-color: rgba(255, 255, 255, 0.512);
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-left: 700px;
+}
