@@ -1,3 +1,5 @@
+var draw_sound = new Audio('木魚.mp3');
+var ticking = new Audio('The Clock Is Ticking.mp3');
 function draw()
 {
     var getRandomInt = (max) => {return Math.floor(Math.random() * max)};
@@ -5,6 +7,7 @@ function draw()
     sign.style.borderStyle = "solid";
     sign.style.borderWidth = "medium";
     var num = getRandomInt(6)
+    draw_sound.play();
     if(num == 0)
         sign.innerHTML = "大吉";
     else if(num == 1)
@@ -18,6 +21,8 @@ function draw()
     else if(num == 5)
         sign.innerHTML = "大凶";
 }
+
+
 function countDown()
 {
     var counter_text = document.getElementById("counter");
@@ -32,7 +37,10 @@ function countDown()
     if(counter_text === null)
         console.log("not found")
     else 
-        counter_text.innerHTML = days + "天" + hours + "時" + minutes + "分" + seconds + "秒"
+    {
+        ticking.play();
+        counter_text.innerHTML = days + "天" + hours + "時" + minutes + "分" + seconds + "秒";
+    }
     return ;
 }
 setInterval(countDown,1000)
