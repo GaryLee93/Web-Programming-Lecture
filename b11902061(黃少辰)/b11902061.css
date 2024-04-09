@@ -19,6 +19,9 @@ ul{
     color: white;
     line-height: 1.7;
 }
+a{
+    color: aqua;
+}
 .mainTitle{
     text-align: center;
     font-size: 64px;

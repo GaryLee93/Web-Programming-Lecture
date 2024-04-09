@@ -18,9 +18,6 @@ function withdraw_NASA(){
 }
 
 var problem2038 = new Date("2038/1/19 3:14:07");
-var nowDate = new Date();
-var timeDiff = problem2038 - nowDate;
-
 window.onload = init;
 
 function init(){
@@ -33,7 +30,9 @@ function countTime(){
     if(timerElement == null)
         console.warn("timer null");
     
-    timeDiff--;
+    var nowDate = new Date();
+    var timeDiff = Math.floor((problem2038 - nowDate)/1000);
+
     var sec = timeDiff % 60;
     var min = Math.floor(timeDiff/60) % 60;
     var hour = Math.floor(timeDiff/3600) % 24;
