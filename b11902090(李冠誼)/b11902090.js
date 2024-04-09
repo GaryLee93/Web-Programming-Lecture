@@ -1,18 +1,3 @@
-/*
-function askAge()
-{
-    var x = prompt("你現在幾歲？","");
-    if(x < 18)
-    {
-        alert("你年紀太小了喔");
-        window.opener = null;
-        window.close();
-    }
-    alert("兄弟，你好大");
-}
-window.addEventListener("DOMContentLoaded",askAge());
-*/
-
 function draw()
 {
     var getRandomInt = (max) => {return Math.floor(Math.random() * max)};
@@ -33,3 +18,21 @@ function draw()
     else if(num == 5)
         sign.innerHTML = "大凶";
 }
+function countDown()
+{
+    var counter_text = document.getElementById("counter");
+    var diff = new Date("2025/1/1 00:00:00") - new Date();
+    var seconds = Math.floor(diff/1000)
+    var minutes = Math.floor(seconds/60)
+    var hours = Math.floor(minutes/60)
+    var days = Math.floor(hours/24)
+    seconds %= 60;
+    minutes %= 60;
+    hours %= 24;
+    if(counter_text === null)
+        console.log("not found")
+    else 
+        counter_text.innerHTML = days + "天" + hours + "時" + minutes + "分" + seconds + "秒"
+    return ;
+}
+setInterval(countDown,1000)
