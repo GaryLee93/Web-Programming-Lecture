@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <title>歡迎來到我的部落格</title>
-</head>
-<body>
-    <h1>歡迎來到我的部落格</h1>
-    <hr>
+{% extends 'base.html' %}
+{% block title %} 我的部落格-首頁 {% endblock %}
+{% block headmessage %} 
+    <h3 style="font-family: 標楷體;">本站文章列表</h3>
+{% endblock %}
+{% block content %}
     {% for post in posts %}
-        <p style='font-family: 標楷體;font-size: 16pt;font-weight: bold;'>
-            <a href='/post/{{post.slug}}'>{{post.title}}</a>
-            <label style="font-size: 13pt;">貼文時間：{{post.pub_date}}</label>  
+        <p style="font-family: 標楷體; font-size: 20px; font-weight: bold;">
+            <a href="/post/{{post.slug}}">{{ post.title }}</a> 
+            <label style="font-size: 14px;"> {{ post.pub_date }} </label>
         </p>
     {% endfor %}
-    <hr>
-    <h3>現在時間:{{now}}</h3>
-    <img src="https://m.media-amazon.com/images/I/31wImUsx2ZL._UXNaN_FMjpg_QL85_.jpg" alt="幹，圖勒" title="嘿化魔理沙">
-
-</body>
-</html>
+{% endblock %}
