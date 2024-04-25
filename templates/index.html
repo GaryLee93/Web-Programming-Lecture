@@ -5,9 +5,22 @@
 {% endblock %}
 {% block content %}
     {% for post in posts %}
-        <p style="font-family: 標楷體; font-size: 20px; font-weight: bold;">
-            <a href="/post/{{post.slug}}">{{ post.title }}</a> 
-            <label style="font-size: 14px;"> {{ post.pub_date }} </label>
-        </p>
+        <div class="card mb-4">
+            <div class="card-header">
+                <div class="card-title">
+                    <a style="font-family: 標楷體; font-size: 20px;" href="/post/{{post.slug}}">{{ post.title }}</a> 
+                </div>
+            </div>
+            <div class="card-body" style="background-color: #e5e4eb;">
+                <div class="card-text" >
+                    {{ post.body | truncatechars:60 }}
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="card-text">
+                    發佈時間：{{ post.pub_date | date:"Y-m-d, h:i"}}
+                </div>
+            </div>
+        </div>
     {% endfor %}
 {% endblock %}
