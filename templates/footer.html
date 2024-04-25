@@ -1,0 +1,13 @@
+{% block footer %}
+    <div class="row">
+        {% if now %}
+            <div class="col-12 align-self-center">
+                現在時間： {{ now }}
+            </div>
+        {% else %}
+            <div class="col-12 align-self-center">
+                Copyright© 2000-2024. jfanc All Rights Reserved.
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
