@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load markdown_deux_tags %}
 {% block title %} 我的部落格-首頁 {% endblock %}
 {% block headmessage %} 
     <h3 style="font-family: 標楷體;">本站文章列表</h3>
@@ -19,7 +20,7 @@
                         </div>
                     {% endif %}
                     <div class="col-md-10 col-sm-10 card-text" >
-                        {{ post.body | truncatechars:post.abstract }}
+                        {{ post.body | markdown | truncatechars:post.abstract }}
                     </div>
                 </div>
             </div>
