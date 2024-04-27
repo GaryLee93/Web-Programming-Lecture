@@ -13,9 +13,11 @@
             </div>
             <div class="card-body" style="background-color: #e5e4eb;">
                 <div class="row">
-                    <div class="col-md-2 col-sm-2">
-                        <img src="{{ post.pic.url }}" alt="幹，圖勒" width="100">
-                    </div>
+                    {% if post.pic %}
+                        <div class="col-md-1 col-sm-1">
+                            <img src="{{ post.pic.url }}" alt="幹，圖勒" width="100">
+                        </div>
+                    {% endif %}
                     <div class="col-md-10 col-sm-10 card-text" >
                         {{ post.body | truncatechars:post.abstract }}
                     </div>

@@ -13,7 +13,7 @@ class Post(models.Model):
         validators=[MinValueValidator(0)]
     )
     body = models.TextField()
-    pic = models.ImageField(upload_to='images/',default='')
+    pic = models.ImageField(upload_to='images/',default='',blank=True)
     pub_date = models.DateTimeField(default=timezone.now)
 
     class Meta:

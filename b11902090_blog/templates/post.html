@@ -8,9 +8,11 @@
 {% block content %}
         <p style="font-family: 標楷體; font-size: 12pt; letter-spacing: 2pt ;">
             <div class="row">
-                <div class="col-md-2 col-sm-2">
-                    <img src="{{ post.pic.url }}" width="200">
-                </div>
+                {% if post.pic %}
+                    <div class="col-md-2 col-sm-2">
+                        <img src="{{ post.pic.url }}" width="200">
+                    </div>
+                {% endif %}
                 <div class="col-md-10 col-sm-2">
                     {{ post.body | linebreaksbr}}
                 </div>
