@@ -18,11 +18,16 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path,include
-from mainsite.views import homepage,showpost
+from mainsite import views
 from . import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",homepage),
-    path('post/<slug:slug>/',showpost)
+    path("",views.homepage),
+    path('post/<slug:slug>/',views.showpost),
+    path('about/',views.about),
+    path('about/<int:author_no>',views.about),
+    path('post/<int:yr>/<int:mon>/<int:day>/<int:postnum>',views.post),
+    path('post2/<int:yr>/<int:mon>/<int:day>',views.post2,name='post-url-2'),
+    path('<int:tvno>/',views.template_test,name='tv-url'),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
