@@ -1,0 +1,37 @@
+{% extends "template_test.html" %}
+{% block title %}車賣場{% endblock %}
+{% block menu %}
+    <div class="collpase navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            {% for m in car_maker %}
+                <a class="nav-link" href="{% url "carlist_url" forloop.counter0 %}">{{m}}</a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+<h2>歡迎光臨測試賣場</h2>
+{% if cars %}
+<table>
+{% endif %}
+        <tr>
+            <td>車廠</td>
+            <td>車款</td>
+            <td>價格</td>
+        </tr>
+        {% load humanize %}
+        {% for c in cars %}
+            <tr bgcolor="{% cycle "#eeeeee" "#cccccc" %}">
+                <td>{{maker_name}}</td>
+                <td>{{ c.model }}</td>
+                <td align="right">NT${{ c.price | floatformat:2 | intcomma }}</td>
+            </tr>
+            {% empty %}
+                <h3>車廠<em>{{maker_name}}</em>目前無庫存車</h3>
+        {% endfor %}
+
+    {% if cars %}
+    </table>
+    {% endif %}
+{% endblock %}

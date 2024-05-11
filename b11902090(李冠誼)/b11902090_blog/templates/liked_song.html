@@ -1,0 +1,22 @@
+{% extends "template_test.html" %}
+{% block title %}酷歌{% endblock %}
+{% block tvname %}{{tv.name}}{% endblock %}
+{% block menu %}
+    <div class="collpase navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            {% for t in tv_list %}
+                <a class="nav-link" href="{% url "liked_song" forloop.counter0%}">
+                    {{t.name}}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div id="tvcode" align="center">
+            <iframe width="1400" height="720" src="https://www.youtube.com/embed/{{ tv.tvcode }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+{% endblock %}

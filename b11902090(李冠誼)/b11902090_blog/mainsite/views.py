@@ -40,4 +40,30 @@ def template_test(request,tvno=0):
     tvno = tvno
     tv = tv_list[tvno]
     now = datetime.now()
-    return render(request,'template_test.html',locals())
+    return render(request,'tv.html',locals())
+
+def liked_song(request,tvno=0):
+    tv_list = [{'name':'Sci-Romance','tvcode':'VkRi59oa5Eg?si=3148n5xYkarc1yih'},
+               {'name':'Dig-Up','tvcode':'3GUx7x2Ko3s?si=1QoU9aSQtievONg-'},
+               {'name':'Sub-Requiem','tvcode':'hCgAiV-MYYw?si=ZV-zckkGlYXtIJWc'}]
+    tvno = tvno
+    tv = tv_list[tvno]
+    now = datetime.now()
+    hour = now.timetuple().tm_hour
+    return render(request,'liked_song.html',locals()) 
+
+def carlist(request,maker=0):
+    car_maker = ['Ford','Honda','Mozada']
+    car_list = [[{'model':'Mustang','price':900000},
+                {'model':'Fiesta','price':203500},
+                {'model':'Focus','price':605000}],
+                [{'model':'Fit','price':450000},
+                {'model':'City','price':150000},
+                {'model':'NSX','price':1200000}],
+                [{'model':'Mazada3','price':329999},
+                {'model':'Mazada5','price':603000},
+                {'model':'Mazada6','price':850000}]]
+    maker = maker
+    maker_name = car_maker[maker]
+    cars = car_list[maker]
+    return render(request,'carlist.html',locals())

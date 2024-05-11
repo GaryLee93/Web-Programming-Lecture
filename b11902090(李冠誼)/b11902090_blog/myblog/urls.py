@@ -30,4 +30,8 @@ urlpatterns = [
     path('post/<int:yr>/<int:mon>/<int:day>/<int:postnum>',views.post),
     path('post2/<int:yr>/<int:mon>/<int:day>',views.post2,name='post-url-2'),
     path('<int:tvno>/',views.template_test,name='tv-url'),
+    path('liked_song/',views.liked_song),
+    path('liked_song/<int:tvno>',views.liked_song,name='liked_song'),
+    path('carlist/',views.carlist),
+    path('carlist/<int:maker>',views.carlist,name='carlist_url'),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
