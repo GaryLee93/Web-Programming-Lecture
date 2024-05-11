@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from datetime import datetime
 from .models import Post
+import os
+
 
 # Create your views here.
 
@@ -34,23 +36,20 @@ def post(request,yr,mon,day,postnum):
 def post2(request,yr,mon,day):
     return render(request,'post2.html',locals())
 
-def template_test(request,tvno=0):
-    tv_list = [{'name':'NASA','tvcode':'21X5lGlDOfg?si=mUrpRySBg4Tu5MSU'},
-               {'name':'campFire','tvcode':'mKCieTImjvU?si=DJEZEjM9WrVmuBiL'}]
+def video_play(request,tvno=0):
+    if(request.path.find('/liked_song/') != -1):
+        videoType = 0
+        tv_list = [{'name':'Sci-Romance','tvcode':'VkRi59oa5Eg?si=3148n5xYkarc1yih'},
+                {'name':'Dig-Up','tvcode':'3GUx7x2Ko3s?si=1QoU9aSQtievONg-'},
+                {'name':'Sub-Requiem','tvcode':'hCgAiV-MYYw?si=ZV-zckkGlYXtIJWc'}]
+    elif(request.path.find('/tv/') != -1):
+        videoType = 1
+        tv_list = [{'name':'NASA','tvcode':'21X5lGlDOfg?si=mUrpRySBg4Tu5MSU'},
+                {'name':'campFire','tvcode':'mKCieTImjvU?si=DJEZEjM9WrVmuBiL'}]
     tvno = tvno
     tv = tv_list[tvno]
     now = datetime.now()
     return render(request,'tv.html',locals())
-
-def liked_song(request,tvno=0):
-    tv_list = [{'name':'Sci-Romance','tvcode':'VkRi59oa5Eg?si=3148n5xYkarc1yih'},
-               {'name':'Dig-Up','tvcode':'3GUx7x2Ko3s?si=1QoU9aSQtievONg-'},
-               {'name':'Sub-Requiem','tvcode':'hCgAiV-MYYw?si=ZV-zckkGlYXtIJWc'}]
-    tvno = tvno
-    tv = tv_list[tvno]
-    now = datetime.now()
-    hour = now.timetuple().tm_hour
-    return render(request,'liked_song.html',locals()) 
 
 def carlist(request,maker=0):
     car_maker = ['Ford','Honda','Mozada']
