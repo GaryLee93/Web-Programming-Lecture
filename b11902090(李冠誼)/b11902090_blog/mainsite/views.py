@@ -46,7 +46,8 @@ def video_play(request,tvno=0):
     elif(request.path.find('/tv/') != -1):
         videoType = 1
         tv_list = [{'name':'NASA','tvcode':'21X5lGlDOfg?si=mUrpRySBg4Tu5MSU'},
-                {'name':'campFire','tvcode':'mKCieTImjvU?si=DJEZEjM9WrVmuBiL'}]
+                {'name':'campFire','tvcode':'mKCieTImjvU?si=DJEZEjM9WrVmuBiL'},
+                {'name':'最終鬼畜道化師ドナルド・M','tvcode':'k-6O8gGbdz0?si=f2_M8HKyc2YqD58b'}]
     tvno = tvno
     tv = tv_list[tvno]
     now = datetime.now()
