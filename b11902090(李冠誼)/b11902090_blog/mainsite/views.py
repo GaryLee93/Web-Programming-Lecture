@@ -39,9 +39,10 @@ def post2(request,yr,mon,day):
 def video_play(request,tvno=0):
     if(request.path.find('/liked_song/') != -1):
         videoType = 0
-        tv_list = [{'name':'Sci-Romance','tvcode':'VkRi59oa5Eg?si=3148n5xYkarc1yih'},
-                {'name':'Dig-Up','tvcode':'3GUx7x2Ko3s?si=1QoU9aSQtievONg-'},
-                {'name':'Sub-Requiem','tvcode':'hCgAiV-MYYw?si=ZV-zckkGlYXtIJWc'}]
+        tv_list = [{'name':'Sci-Fi ROMANCE TRAVELER','tvcode':'VkRi59oa5Eg?si=3148n5xYkarc1yih'},
+                {'name':'ダイナマイト','tvcode':'3GUx7x2Ko3s?si=1QoU9aSQtievONg-'},
+                {'name':'無意識レクイエム (cosmobsp rmx) ','tvcode':'hCgAiV-MYYw?si=ZV-zckkGlYXtIJWc'},
+                {'name':'空想メソロギヰ','tvcode':'ZZvJY7_gyfw?si=jBJJYTmY1GHREoO8'}]
     elif(request.path.find('/tv/') != -1):
         videoType = 1
         tv_list = [{'name':'NASA','tvcode':'21X5lGlDOfg?si=mUrpRySBg4Tu5MSU'},

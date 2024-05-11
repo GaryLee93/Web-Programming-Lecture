@@ -1,20 +1,18 @@
 {% extends "template_test.html" %}
-{% block title %}酷歌{% endblock %}
+{% block title %}影片與音樂{% endblock %}
 {% block tvname %}{{tv.name}}{% endblock %}
 {% block menu %}
     <div class="collpase navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link active link-dark" aria-current="page" href="/">Home</a>
             {% for t in tv_list %}
                 {% if videoType == 0 %}
-                    <a class="nav-link" href="{% url "liked_song" forloop.counter0%}">
-                        {{t.name}}
-                    </a>
+                    <a class="nav-link link-dark" href="{% url "liked_song" forloop.counter0%}">
                 {% elif videoType == 1 %}
-                    <a class="nav-link" href="{% url "tv-url" forloop.counter0%}">
+                    <a class="nav-link link-dark" href="{% url "tv-url" forloop.counter0%}">
+                {% endif %}
                         {{t.name}}
                     </a>
-                {% endif %}
             {% endfor %}
         </div>
     </div>

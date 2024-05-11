@@ -8,15 +8,15 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light- bg-light">
         <div calss="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand link-dark" href="#">
                 {% load static %}
                 <img src="{% static "images/logo.png" %}" width="60">
                 {% if hour > 18 %}
-                    GoodNight!
+                    GoodNight! 
                 {% elif hour < 10 %}
                     GoodMorning!
                 {% else %}
-                    Hello!
+                    Hello! 
                 {% endif %}
                 {% block tvname %}{% endblock %}
             </a>

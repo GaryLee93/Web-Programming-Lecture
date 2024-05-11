@@ -31,7 +31,7 @@ urlpatterns = [
     path('post2/<int:yr>/<int:mon>/<int:day>',views.post2,name='post-url-2'),
     path('tv/',views.video_play,name='tv-url'),
     path('tv/<int:tvno>/',views.video_play,name='tv-url'),
-    path('liked_song/',views.video_play),
+    path('liked_song/',views.video_play,name='liked_song'),
     path('liked_song/<int:tvno>',views.video_play,name='liked_song'),
     path('carlist/',views.carlist),
     path('carlist/<int:maker>',views.carlist,name='carlist_url'),
