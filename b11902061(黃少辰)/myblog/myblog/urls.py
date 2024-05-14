@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainsite.views import homepage, showpost
+from mainsite.views import homepage, showpost, about, reverse_practice
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", homepage),
     path('post/<slug:slug>/', showpost),
+    path('about/', about),
+    path('about/<int:author_no>', about),
+    path('date/<int:year>/<int:month>/<int:day>', reverse_practice, name='post-url'),
 ]
