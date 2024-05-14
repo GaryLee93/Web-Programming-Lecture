@@ -12,3 +12,16 @@ class News(models.Model):
 
     def __str__(self):
         return self.tag
+    
+class Professor(models.Model):
+    name = models.CharField(max_length=10)
+    title = models.CharField(max_length=10)
+    research = models.CharField(max_length=50)
+    lectures = models.CharField(max_length=50)
+    description = models.CharField(max_length=100)
+
+    class Meta:
+        ordering = ('name',)
+
+    def __str__(self):
+        return self.name
