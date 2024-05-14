@@ -6,4 +6,4 @@ from .models import News
 
 def homepage(request):
     allNews = News.objects.all()
-    return render(request,'index.html',locals())
+    return render(request,'homepage.html',locals())
