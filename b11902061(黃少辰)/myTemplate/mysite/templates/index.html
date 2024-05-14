@@ -1,0 +1,21 @@
+<!-- index.html -->
+{% extends "base.html" %}
+{% block title %} 歡迎收看 {% endblock %}
+{% block tvname %} {{tv.name}} {% endblock %}
+{% block menu %}
+<ul class='nav navbar-nav'>
+    <li class='active'><a href='/'>Home</a></li>
+   {% for t in tv_list %}
+    <li>
+    <a href="{% url 'tv-url' forloop.counter0 %}"> {{ t.name }} </a>
+    </li> 
+   {% endfor %}
+</ul>
+{% endblock %}
+{% block content %}
+<div class='conatiner'>
+    <div id='tvcode' align='center'>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{tv.tvcode}}" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+{% endblock %}

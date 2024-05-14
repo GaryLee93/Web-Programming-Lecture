@@ -1,5 +1,5 @@
 """
-URL configuration for myblog project.
+URL configuration for myTemplate project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,13 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainsite.views import homepage, showpost, about, reverse_practice
+from mysite import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", homepage),
-    path('post/<slug:slug>/', showpost),
-    path('about/', about),
-    path('about/<int:author_no>', about),
-    path('date/<int:year>/<int:month>/<int:day>', reverse_practice, name='post-url'),
+    path("", views.index),
+    path('<int:tvno>/', views.index, name = 'tv-url'),
 ]
