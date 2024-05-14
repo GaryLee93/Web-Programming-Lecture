@@ -16,13 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainsite.views import homepage, showpost, about, reverse_practice
+from mainsite import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", homepage),
-    path('post/<slug:slug>/', showpost),
-    path('about/', about),
-    path('about/<int:author_no>', about),
-    path('date/<int:year>/<int:month>/<int:day>', reverse_practice, name='post-url'),
+    path("", views.homepage),
+    path('post/<slug:slug>/', views.showpost),
+    path('about/', views.about),
+    path('about/<int:author_no>', views.about),
+    path('date/<int:year>/<int:month>/<int:day>', views.reverse_practice, name='post-url'),
+    path("music/", views.music_homepage),
+    path("music/<slug:slug>", views.music),
 ]

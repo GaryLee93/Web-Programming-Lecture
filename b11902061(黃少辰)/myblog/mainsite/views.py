@@ -2,7 +2,7 @@ from django.template.loader import get_template
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from datetime import datetime
-from .models import Post
+from .models import Post, Music
 from django.urls import reverse
 
 # Create your views here.
@@ -32,3 +32,20 @@ def reverse_practice(request, year, month, day):
     html = "<h1> Date: {}-{}-{} </h1>".format(year, month, day)
     html += "<a href='{}'>Show the Post Link</a>".format(reverse('post-url', args=(year, month, day)))
     return HttpResponse(html)
+
+def music_homepage(request):
+    template = get_template('music_index.html')
+    musics = Music.objects.all()
+    now = datetime.now()
+    html = template.render(locals())
+    return HttpResponse(html)
+
+def music(request, slug):
+    template = get_template('music_post.html')
+    try:
+        music = Music.objects.get(slug=slug)
+        if music != None:
+            html = template.render(locals())
+        return HttpResponse(html)
+    except:
+        return redirect('/music')

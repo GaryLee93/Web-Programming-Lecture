@@ -1,0 +1,14 @@
+<!-- music.html -->
+{% extends 'base.html' %}
+{% load markdown_deux_tags %}
+{% block title %} 我推的音樂 {% endblock %}
+{% block headmessage %}
+    <h3 style='font-family:微軟正黑體;'>{{ music.title }}</h3>
+    <a style='font-family:微軟正黑體;' href='/music'>回首頁</a>
+{% endblock %}
+{% block content %} 
+    <p style='font-family:微軟正黑體;font-size:12pt;letter-spacing:2pt;'>
+        {{ music.body | markdown }}
+    </p>
+    {{ music.embed | safe }}
+{% endblock %}
