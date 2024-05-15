@@ -2,9 +2,8 @@ from django.template.loader import get_template
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from datetime import datetime
-from .models import Post
+from .models import Post,MoodPost,Mood
 import os
-
 
 # Create your views here.
 
@@ -28,13 +27,6 @@ def showpost(request,slug):
 def about(request,author_no=0):
     html = "<h2>Here is No:{}'s about page<h2>".format(author_no)
     return HttpResponse(html)
-
-def post(request,yr,mon,day,postnum):
-    html = "<h2>date is {}/{}/{}!! Your post num is {}<h2>".format(yr,mon,day,postnum)
-    return HttpResponse(html)
-
-def post2(request,yr,mon,day):
-    return render(request,'post2.html',locals())
 
 def video_play(request,tvno=0):
     if(request.path.find('/liked_song/') != -1):
@@ -68,3 +60,33 @@ def carlist(request,maker=0):
     maker_name = car_maker[maker]
     cars = car_list[maker]
     return render(request,'carlist.html',locals())
+
+def show_form(request,pid=None,del_pass=None):
+    posts = MoodPost.objects.filter(enabled=True).order_by('-pub_time')[:30]
+    moods = Mood.objects.all()
+    try:
+        user_id = request.GET['user_id']
+        user_pass = request.GET['user_pass']
+        user_post = request.GET['user_post']
+        user_mood = request.GET['mood']
+    except:
+        user_id = None
+        message = '如要張貼訊息，每個欄位都要填'
+
+    if del_pass and pid:
+        try:
+            post = MoodPost.objects.get(id=pid)
+        except:
+            post = None
+        if post:
+            if post.del_pass == del_pass:
+                post.delete()
+                message = "資料刪除成功"
+            else:
+                message = "密碼錯誤"
+    elif user_id != None:
+        mood = Mood.objects.get(status=user_mood)
+        post = MoodPost.objects.create(mood=mood,nickname=user_id,del_pass=user_pass,message=user_post)
+        post.save()
+        message = '成功儲存，請記得編輯你的密碼「{}」!，訊息需經過審查之後才會顯示。'.format(user_pass)
+    return render(request,'get_example.html',locals())
