@@ -21,3 +21,20 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Mood(models.Model):
+    status = models.CharField(max_length=50,null=False)
+
+    def __str__(self):
+        return self.status
+
+class MoodPost(models.Model):
+    mood = models.ForeignKey('Mood',on_delete=models.CASCADE)
+    nickname = models.CharField(max_length=50,default="不告訴你")
+    message = models.TextField(null=False)
+    del_pass = models.CharField(max_length=50)
+    pub_time = models.DateTimeField(default=timezone.now)
+    enabled = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.message
