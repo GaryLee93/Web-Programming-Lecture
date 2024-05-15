@@ -19,6 +19,7 @@ class Professor(models.Model):
     research = models.CharField(max_length=50)
     lectures = models.CharField(max_length=50)
     description = models.CharField(max_length=100)
+    slug = models.CharField(max_length=10)
 
     class Meta:
         ordering = ('name',)

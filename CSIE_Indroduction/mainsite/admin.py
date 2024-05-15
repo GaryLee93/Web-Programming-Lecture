@@ -6,7 +6,7 @@ class NewsAdmin(admin.ModelAdmin):
     list_display = ('tag','body','uploadTime')
 
 class ProfAdmin(admin.ModelAdmin):
-    list_display = ('name', 'title', 'description')
+    list_display = ('name', 'slug', 'title', 'description')
 
 admin.site.register(News,NewsAdmin)
 admin.site.register(Professor,ProfAdmin)
