@@ -61,7 +61,7 @@ def carlist(request,maker=0):
     cars = car_list[maker]
     return render(request,'carlist.html',locals())
 
-def show_form(request,pid=None,del_pass=None):
+def show_post(request,pid=None,del_pass=None):
     posts = MoodPost.objects.filter(enabled=True).order_by('-pub_time')[:30]
     moods = Mood.objects.all()
     try:
@@ -90,3 +90,8 @@ def show_form(request,pid=None,del_pass=None):
         post.save()
         message = '成功儲存，請記得編輯你的密碼「{}」!，訊息需經過審查之後才會顯示。'.format(user_pass)
     return render(request,'get_example.html',locals())
+
+def listing(request):
+    posts = MoodPost.objects.filter(enabled=True).order_by('-pub_time')[:150]
+    moods = Mood.objects.all()
+    return render(request,'list.html',locals())

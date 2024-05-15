@@ -21,33 +21,4 @@
         {{ message }}
     </div>
 {% endif %}
-<div class="row ">
-    {% for p in posts %}
-        <div class="col-md-4 col-sm-12">
-            <div class="card">
-                <div class="card-header">{{ p.nickname }} 覺得 {{ p.mood }}</div>
-                <div class="card-body">{{ p.message | linebreaks }}</div>
-                <div class="card-footer" align="right">
-                    {{ p.pub_time }}
-                    <script>
-                        function go_delete(id)
-                        {
-                            var user_pass = document.getElementById('user_pass').value;
-                            if(user_pass != "")
-                            {
-                                var usr = '/'+id+'/'+user_pass
-                                window.location = usr;
-                            }
-                            else 
-                            {
-                                alert("請填刪除密碼");
-                            }
-                        }
-                    </script>
-                    <button onclick="go_delete({{p.id}})">刪除貼文</button>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-</div>
 {% endblock %}
