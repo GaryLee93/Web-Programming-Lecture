@@ -1,1 +1,20 @@
 {% extends 'base.html' %}
+{% block pageTitle %}系所成員{% endblock %}
+{% block contentTitle %}
+<h3>教授列表ヽ(∀ﾟ )人(ﾟ∀ﾟ)人( ﾟ∀)人(∀ﾟ )人(ﾟ∀ﾟ)人( ﾟ∀)ﾉ</h3>
+{% endblock %}
+{% block content %}
+<div class="row">
+    {% for professor in profs %}
+        {% load static %}
+        <div class="col-md-4 col-sm-6">
+            <div class="card">
+                <img class="card-img-top" src="{{ professor.pic.url }}">
+                <div class="card-title fs-4">{{ professor.name }}</div>
+                <div class="card-title"><b>稱號：</b>{{ professor.title }}</div>
+                <div class="card-title"><b>研究領域：</b>{{ professor.research }}</div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

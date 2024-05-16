@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import News, Professor
+from mainsite import models
 
 # Register your models here.
 class NewsAdmin(admin.ModelAdmin):
@@ -8,5 +8,9 @@ class NewsAdmin(admin.ModelAdmin):
 class ProfAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'title', 'description')
 
-admin.site.register(News,NewsAdmin)
-admin.site.register(Professor,ProfAdmin)
+class CoruseAdmin(admin.ModelAdmin):
+    list_display=('name','slug','time','credit','description','sweetScale')
+
+admin.site.register(models.News,NewsAdmin)
+admin.site.register(models.Professor,ProfAdmin)
+admin.site.register(models.course,CoruseAdmin)
