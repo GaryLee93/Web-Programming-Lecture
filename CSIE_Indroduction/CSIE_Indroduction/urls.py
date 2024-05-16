@@ -26,4 +26,5 @@ urlpatterns = [
     path("member",views.professorIndex),
     path("professor/<slug:slug>",views.professor),
     path("course",views.courseIndex),
+    #path("course/<int:slug>",)
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

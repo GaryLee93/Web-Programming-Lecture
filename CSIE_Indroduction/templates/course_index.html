@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block pageTitle %}課程介紹{% endblock %}
+{% block contentTitle %}
+<h3>課程列表(*´д`)</h3>
+{% endblock %}
+{% block content %}
+<div class="row">
+    {% for course in courses %}
+        {% load static %}
+        <div class="col-md-12 col-sm-12">
+            <div class="card border-5">
+                <div class="card-header fs-4"><b>{{ course.name }}</b></div>
+                <div class="card-title p-1">
+                    {{ course.description }}
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>學分：</b>{{ course.credit }}</li>
+                    <li class="list-group-item"><b>甜涼度：</b>{{ course.sweetScale }}</li>
+                    <li class="list-group-item"><b>開課學期：</b>{{ course.time }}</li>
+                </ul>
+                <a class="stretched-link" href="course/{{ course.slug }}"></a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
