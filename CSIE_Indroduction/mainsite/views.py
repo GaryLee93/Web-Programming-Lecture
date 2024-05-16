@@ -2,20 +2,24 @@ from django.template.loader import get_template
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import HttpResponse
-from .models import News, Professor
+from mainsite import models
 # Create your views here.
 
 def homepage(request):
-    allNews = News.objects.all()
+    allNews = models.News.objects.all()
     return render(request,'homepage.html',locals())
 
 def professor(request, slug):
     try:
-        prof = Professor.objects.get(slug=slug)
+        prof = models.Professor.objects.get(slug=slug)
         return render(request,'professor.html',locals())
     except:
         return redirect('/')
 
-def member(request):
-    profs = Professor.objects.all()
-    return render(request,'member.html',locals())
+def professorIndex(request):
+    profs = models.Professor.objects.all()
+    return render(request,'professor_index.html',locals())
+
+def courseIndex(request):
+    courses = models.course.objects.all()
+    return render(request,'course_index.html',locals())
