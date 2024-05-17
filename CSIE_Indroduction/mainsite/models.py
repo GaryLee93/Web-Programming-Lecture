@@ -17,7 +17,7 @@ class News(models.Model):
 class Professor(models.Model):
     name = models.CharField(max_length=10)
     title = models.CharField(max_length=10)
-    pic = models.ImageField(upload_to='images/',default='',blank=True)
+    pic = models.ImageField(upload_to='images/',default='')
     research = models.CharField(max_length=50)
     lectures = models.CharField(max_length=50)
     description = models.CharField(max_length=100)
@@ -36,6 +36,13 @@ class course(models.Model):
     credit = models.IntegerField()
     description = models.TextField(max_length=400)
     sweetScale = models.IntegerField(validators=[MinValueValidator(-1),MaxValueValidator(5)])
+
+    def __str__(self):
+        return self.name
+class facility(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.TextField(max_length=400)
+    pic = models.ImageField(upload_to='facilities/',default='')
 
     def __str__(self):
         return self.name

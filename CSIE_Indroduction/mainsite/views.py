@@ -23,3 +23,7 @@ def professorIndex(request):
 def courseIndex(request):
     courses = models.course.objects.all()
     return render(request,'course_index.html',locals())
+
+def facilityIndex(request):
+    facilities = models.facility.objects.all()
+    return render(request,'facility_index.html',locals())

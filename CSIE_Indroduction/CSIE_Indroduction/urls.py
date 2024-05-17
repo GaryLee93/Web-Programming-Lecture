@@ -23,8 +23,9 @@ from . import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",views.homepage),
-    path("member",views.professorIndex),
+    path("professor",views.professorIndex),
     path("professor/<slug:slug>",views.professor),
     path("course",views.courseIndex),
     #path("course/<int:slug>",)
+    path("facility",views.facilityIndex),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
