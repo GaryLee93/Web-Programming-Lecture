@@ -11,6 +11,10 @@ class ProfAdmin(admin.ModelAdmin):
 class CoruseAdmin(admin.ModelAdmin):
     list_display=('name','slug','time','credit','description','sweetScale')
 
+class LocAdmin(admin.ModelAdmin):
+    list_display=('name','slug', 'description')
+
 admin.site.register(models.News,NewsAdmin)
 admin.site.register(models.Professor,ProfAdmin)
-admin.site.register(models.course,CoruseAdmin)
+admin.site.register(models.Course,CoruseAdmin)
+admin.site.register(models.Location, LocAdmin)
