@@ -39,8 +39,10 @@ class course(models.Model):
 
     def __str__(self):
         return self.name
+
 class facility(models.Model):
     name = models.CharField(max_length=50)
+    area = models.IntegerField(default=0,validators=[MinValueValidator(0),MaxValueValidator(3)])
     description = models.TextField(max_length=400)
     pic = models.ImageField(upload_to='facilities/',default='')
 
