@@ -20,7 +20,7 @@ class Professor(models.Model):
     pic = models.ImageField(upload_to='images/',default='',blank=True)
     research = models.CharField(max_length=50)
     lectures = models.CharField(max_length=50)
-    description = models.CharField(max_length=400)
+    description = models.CharField(max_length=100)
     slug = models.CharField(max_length=10)
 
     class Meta:
@@ -29,7 +29,7 @@ class Professor(models.Model):
     def __str__(self):
         return self.name
 
-class Course(models.Model):
+class course(models.Model):
     name = models.CharField(max_length=50)
     slug = models.IntegerField(unique=True)
     time = models.CharField(max_length=20)
@@ -39,9 +39,3 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
-    
-class Location(models.Model):
-    name = models.CharField(max_length=10)
-    description = models.TextField(max_length=400)
-    pic = models.ImageField(upload_to='images/location/',default='',blank=True)
-    slug = models.CharField(max_length=10)
