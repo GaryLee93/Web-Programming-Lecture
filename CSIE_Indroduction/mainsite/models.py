@@ -20,7 +20,7 @@ class Professor(models.Model):
     pic = models.ImageField(upload_to='images/',default='')
     research = models.CharField(max_length=50)
     lectures = models.CharField(max_length=50)
-    description = models.CharField(max_length=100)
+    description = models.TextField(max_length=400)
     slug = models.CharField(max_length=10)
 
     class Meta:
