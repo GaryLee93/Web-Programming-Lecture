@@ -8,11 +8,13 @@
     {% for professor in profs %}
         {% load static %}
         <div class="col-md-4 col-sm-6">
-            <div class="card p-3 border-5">
-                <img class="card-img-top" src="{{ professor.pic.url }}">
-                <div class="card-title fs-4"><b>{{ professor.name }}</b></div>
-                <div class="card-title"><b>稱號：</b>{{ professor.title }}</div>
-                <div class="card-title"><b>研究領域：</b>{{ professor.research }}</div>
+            <div class="card border-5">
+                <img class="card-img-top p-2" src="{{ professor.pic.url }}">
+                <div class="card-body">
+                    <div class="card-title fs-4"><b>{{ professor.name }}</b></div>
+                    <div class="card-title"><b>稱號：</b>{{ professor.title }}</div>
+                    <div class="card-title"><b>研究領域：</b>{{ professor.research }}</div>
+                </div>
                 <a class="stretched-link" href="professor/{{professor.slug}}"></a>
             </div>
         </div>
