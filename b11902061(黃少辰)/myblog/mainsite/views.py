@@ -1,6 +1,6 @@
 from django.template.loader import get_template
 from django.http import HttpResponse
-from django.shortcuts import redirect
+from django.shortcuts import render, redirect
 from datetime import datetime
 from .models import Post, Music
 from django.urls import reverse
@@ -49,3 +49,62 @@ def music(request, slug):
         return HttpResponse(html)
     except:
         return redirect('/music')
+    
+def form(request):
+    verified = 1
+    try:
+        user_name = request.GET['user_name']
+    except:
+        user_name = None
+        verified = -1
+    try:
+        age_check = request.GET['age_check']
+    except:
+        age_check = None
+    try:
+        math = request.GET["math"]
+    except:
+        math = None
+    try:
+        year = request.GET["year"]
+    except:
+        year = None
+    try:
+        num = request.GET.getlist('num')
+    except:
+        num = None
+    try:
+        message = request.GET["message"]
+    except:
+        message = None
+    
+    if verified == -1:
+        return render(request, "form.html", locals())
+    
+    if user_name is None or age_check is None or num is None or message is None:
+        verified = 0
+    
+    math_check = True
+    if math != "3":
+        verified = 0
+        math_check = False
+    
+    num_check = True
+    ans = ['0', '1', '2', '3', '5', '6', '7', '8', '9', '11', '12', '13', '14']
+    if len(ans) == len(num):
+        for i in range(len(num)):
+            if num[i] != ans[i]:
+                verified = 0
+                num_check = False
+                break
+    else:
+        verified = 0
+        num_check = False
+    
+    year_check = True
+    if year != "2024":
+        verified = 0
+        year_check = False
+    
+    years = range(1,10001)
+    return render(request, "form.html", locals())

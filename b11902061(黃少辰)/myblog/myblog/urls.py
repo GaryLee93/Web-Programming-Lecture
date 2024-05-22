@@ -27,4 +27,5 @@ urlpatterns = [
     path('date/<int:year>/<int:month>/<int:day>', views.reverse_practice, name='post-url'),
     path("music/", views.music_homepage),
     path("music/<slug:slug>", views.music),
+    path("form", views.form),
 ]
