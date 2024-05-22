@@ -13,7 +13,8 @@
                 <div class="card-body">
                     <div class="card-title fs-4"><b>{{ professor.name }}</b></div>
                     <div class="card-title"><b>稱號：</b>{{ professor.title }}</div>
-                    <div class="card-title"><b>研究領域：</b>{{ professor.research }}</div>
+                    <div class="card-title"><b>研究領域：</b>{{ professor.research | truncatechars:10 }}</div>
+                    <div class="card-title"><b>[點擊查看詳細資料]</b></div>
                 </div>
                 <a class="stretched-link" href="professor/{{professor.slug}}"></a>
             </div>
