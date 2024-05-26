@@ -3,6 +3,29 @@
 {% block contentTitle %}
 <h3>教授列表ヽ(∀ﾟ )人(ﾟ∀ﾟ)人( ﾟ∀)人(∀ﾟ )人(ﾟ∀ﾟ)人( ﾟ∀)ﾉ</h3>
 {% endblock %}
+{% block slideShow %}
+    {% load static %}
+    <div class="col-12 col-md-12 col-sm-12">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>超重要行政人員-承滿姐（周承滿）</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-2 col-md-2 col-sm-2">
+                        <img class="w-100" src="{% static "images/chenMenSister.jpg" %}">
+                    </div>
+                    <div class="col-8 col-md-8 col-sm-8">
+                        <p class="fs-4">承滿姐是系上非常重要的行政人員，常常需要處理許多演講、研討會、工讀安排等事務。平時大家遇到行政上的問題時
+                            總是第一個想到承滿姐，接著就會到系辦問他，然後問題就解決了，說他是系上的多拉ㄟ夢也不為過。而身為行政人員的同時，他
+                            也常常關心同學們的學習與心裡狀態，幫忙排解各種疑難，系上的大家大概很難想像沒有承滿姐幫助的樣子，如果你也在系上遇到了神奇的問題，承滿姐絕對是你的一盞明燈。
+                            （我自己就常常像承滿姐求助，不管是在工讀還是獎學金的申請上)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 {% block content %}
 <div class="row">
     {% for professor in profs %}
