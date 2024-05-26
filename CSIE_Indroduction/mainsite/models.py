@@ -34,8 +34,9 @@ class course(models.Model):
     slug = models.IntegerField(unique=True)
     time = models.CharField(max_length=20)
     credit = models.IntegerField()
-    description = models.TextField(max_length=400)
-    sweetScale = models.IntegerField(validators=[MinValueValidator(-1),MaxValueValidator(5)])
+    description = models.TextField(max_length=500)
+    sweetScale = models.CharField(max_length=20)
+    coolScale = models.IntegerField(validators=[MinValueValidator(-1),MaxValueValidator(5)],default=0)
 
     def __str__(self):
         return self.name

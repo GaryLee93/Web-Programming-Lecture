@@ -26,3 +26,9 @@ def courseIndex(request):
 def facilityIndex(request):
     facilities = models.facility.objects.all()
     return render(request,'facility_index.html',locals())
+
+def other(request):
+    return render(request,'other.html',locals())
+
+def introduction(request):
+    return render(request,'introduction.html',locals());

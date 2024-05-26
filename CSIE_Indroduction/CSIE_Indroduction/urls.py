@@ -28,4 +28,6 @@ urlpatterns = [
     path("course",views.courseIndex),
     #path("course/<int:slug>",)
     path("facility",views.facilityIndex),
+    path("others",views.other),
+    path("introduction",views.introduction),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
