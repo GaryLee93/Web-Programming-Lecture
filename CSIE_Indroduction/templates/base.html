@@ -20,17 +20,22 @@
                 </div>
             </div>
             <div class="col-md-9 col-sm-9">
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-header">
                         {% block contentTitle %}{% endblock %}
                     </div>
                     <div class="card-body">
                         {% block content %}{% endblock %}
-                    </div>
-                    <div class="card-footer">
-                        {% include 'footer.html' %}
-                    </div>
+                   </div>
                 </div>
+                <div class="card mb-4">
+                    {% block otherContent %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-footer">
+                {% include 'footer.html' %}
             </div>
         </div>
     </div>

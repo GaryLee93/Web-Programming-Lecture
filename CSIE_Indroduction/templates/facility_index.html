@@ -19,7 +19,7 @@
                             {% for facility in facilities %}
                                 {% if facility.area == 0 %}
                                     <div class="col-md-4 col-sm-12">
-                                        <div class="card border-5">
+                                        <div class="card border-5 mb-2">
                                             <img class="card-img-top" style="height: 200px" src="{{ facility.pic.url }}">
                                             <div class="card-header">{{ facility.name }}</div>
                                             <div class="card-body">{{ facility.description }}</div>
@@ -39,18 +39,20 @@
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                        {% for facility in facilities %}
-                            {% if facility.area == 1 %}
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="card border-5">
-                                        <img class="card-img-top" src="{{ facility.pic.url }}">
-                                        <div class="card-header">{{ facility.name }}</div>
-                                        <div class="card-body">{{ facility.description }}</div>
+                        <div class="row">
+                            {% for facility in facilities %}
+                                {% if facility.area == 1 %}
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="card border-5 mb-2">
+                                            <img class="card-img-top" src="{{ facility.pic.url }}">
+                                            <div class="card-header">{{ facility.name }}</div>
+                                            <div class="card-body">{{ facility.description }}</div>
+                                        </div>
                                     </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                   </div>
                 </div>
             </div>
             <div class="accordion-item">
@@ -61,18 +63,20 @@
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                        {% for facility in facilities %}
-                            {% if facility.area == 2 %}
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="card border-5">
-                                        <img class="card-img-top" src="{{ facility.pic.url }}">
-                                        <div class="card-header">{{ facility.name }}</div>
-                                        <div class="card-body">{{ facility.description }}</div>
+                        <div class="row">
+                            {% for facility in facilities %}
+                                {% if facility.area == 2 %}
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="card border-5 mb-2">
+                                            <img class="card-img-top" src="{{ facility.pic.url }}">
+                                            <div class="card-header">{{ facility.name }}</div>
+                                            <div class="card-body">{{ facility.description }}</div>
+                                        </div>
                                     </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                   </div>
                 </div>
             </div>
             <div class="accordion-item">
@@ -83,17 +87,19 @@
                 </h2>
                 <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                        {% for facility in facilities %}
-                            {% if facility.area == 3 %}
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="card border-5">
-                                        <img class="card-img-top" src="{{ facility.pic.url }}">
-                                        <div class="card-header">{{ facility.name }}</div>
-                                        <div class="card-body">{{ facility.description }}</div>
+                        <div class="row">
+                            {% for facility in facilities %}
+                                {% if facility.area == 3 %}
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="card border-5 mb-2">
+                                            <img class="card-img-top" src="{{ facility.pic.url }}">
+                                            <div class="card-header">{{ facility.name }}</div>
+                                            <div class="card-body">{{ facility.description }}</div>
+                                        </div>
                                     </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
