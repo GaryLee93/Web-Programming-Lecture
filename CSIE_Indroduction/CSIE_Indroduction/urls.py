@@ -26,7 +26,7 @@ urlpatterns = [
     path("professor",views.professorIndex),
     path("professor/<slug:slug>",views.professor),
     path("course",views.courseIndex),
-    #path("course/<int:slug>",)
+    path("course/<int:slug>", views.course),
     path("facility",views.facilityIndex),
     path("others",views.other),
     path("introduction",views.introduction),
