@@ -8,7 +8,7 @@
 <body>
     <div class="container-fluid">
         <div class="header">
-            <h1 style="border-top:30px; font-family: 'Times New Roman'; font-size: 80px;"> NTU CSIE </h1>
+            <h1 style="font-family: 'Times New Roman'; font-size: 80px;"> NTU CSIE </h1>
             <h3 style="font-family: 新細明體">
                 ╠
                 <a href="#">系所簡介</a>
@@ -25,19 +25,17 @@
         </div>
 
         <div class="title">
-            <h1 style="font-family: 新細明體;">▁▂▃▄▅▆▇█{% if prof.title != '無'%}【{{ prof.title }}】{% endif %} {{ prof.name }} 教授 █▇▆▅▄▃▂▁</h1>
             <h1> § </h1>
-            <img src="{{ prof.pic.url }}">
+            ◤◢【{{ course.name }}】◣◥
             <h1> § </h1>
         </div>
         
         <div class="data">
-            研究專長：{{ prof.research }}<br>
-            開課：{{ prof.lectures }}
+            〔{{ course.time }}〕 {{ course.credit }}學分 | {{ course.sweetScale }}分甜 | {{ course.coolScale }}分涼<br>
         </div>
-        
+            
         <div class="description">
-            簡介：<br>{{ prof.description }}
+            簡介：<br>{{ course.description }}
         </div>
 
         <div class="footer">

@@ -13,7 +13,14 @@ def professor(request, slug):
         prof = models.Professor.objects.get(slug=slug)
         return render(request,'professor.html',locals())
     except:
-        return redirect('/')
+        return redirect("/professor")
+
+def course(request, slug):
+    try:
+        course = models.course.objects.get(slug=slug)
+        return render(request,'course.html',locals())
+    except:
+        return redirect("/course")
 
 def professorIndex(request):
     profs = models.Professor.objects.all()
