@@ -9,11 +9,8 @@ def homepage(request):
     return render(request,'homepage.html',locals())
 
 def professor(request, slug):
-    try:
-        prof = models.Professor.objects.get(slug=slug)
-        return render(request,'professor.html',locals())
-    except:
-        return redirect("/professor")
+    prof = models.Professor.objects.get(slug=slug)
+    return render(request,'professor.html',locals())
 
 def course(request, slug):
     course = models.course.objects.get(slug=slug)
