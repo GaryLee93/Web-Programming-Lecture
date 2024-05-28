@@ -1,0 +1,14 @@
+{% load static %}
+<div class="footer">
+    <h3>注意: 以上資訊皆為個人見解，請放輕鬆閱讀勿生氣，所以我放了五台電風扇在這邊</h3>
+    {% for i in '01234'|make_list %}
+    <img src="{% static 'images/eletric_fan_spin.gif' %}" style="margin-left: 20px; margin-right: 20px;">
+    {% endfor %}
+</div>
+<style>
+    .footer{
+        text-align: center; 
+        padding: 20px;
+        background-color: pink;
+    }
+</style>

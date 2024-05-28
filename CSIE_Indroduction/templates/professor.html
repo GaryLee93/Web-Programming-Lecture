@@ -1,90 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    {% load static %}
-</head>
-<body>
-    <div class="container-fluid">
-        <div class="header">
-            <h1 style="border-top:30px; font-family: 'Times New Roman'; font-size: 80px;"> NTU CSIE </h1>
-            <h3 style="font-family: 新細明體">
-                ╠
-                <a href="#">系所簡介</a>
-                <span>╣╠╬╣╠</span>
-                <a href="/professor">系所成員</a>
-                <span>╣╠╬╣╠</span>
-                <a href="/course">課程介紹</a>
-                <span>╣╠╬╣╠</span>
-                <a href="/facility">系所導覽</a>
-                <span>╣╠╬╣╠</span>
-                <a href="#">其他</a>
-                ╣
-            </h3>
-        </div>
+{% extends 'simple_base.html' %}
 
-        <div class="title">
-            <h1 style="font-family: 新細明體;">▁▂▃▄▅▆▇█{% if prof.title != '無'%}【{{ prof.title }}】{% endif %} {{ prof.name }} 教授 █▇▆▅▄▃▂▁</h1>
-            <h1> § </h1>
-            <img src="{{ prof.pic.url }}">
-            <h1> § </h1>
-        </div>
-        
-        <div class="data">
-            研究專長：{{ prof.research }}<br>
-            開課：{{ prof.lectures }}
-        </div>
-        
-        <div class="description">
-            簡介：<br>{{ prof.description }}
-        </div>
+{% block pageTitle %}
+{{ prof.name }}教授的介紹
+{% endblock %}
 
-        <div class="footer">
-            <h3>注意: 以上資訊皆為個人見解，請放輕鬆閱讀勿生氣，所以我放了五台電風扇在這邊</h3>
-            {% for i in '01234'|make_list %}
-            <img src="{% static 'images/eletric_fan_spin.gif' %}" style="margin-left: 20px; margin-right: 20px;">
-            {% endfor %}
-        </div>
+{% block content %}
+    <div class="title">
+        <h1 style="font-family: 新細明體;">▁▂▃▄▅▆▇█{% if prof.title != '無'%}【{{ prof.title }}】{% endif %} {{ prof.name }} 教授 █▇▆▅▄▃▂▁</h1>
+        <h1> § </h1>
+        <img src="{{ prof.pic.url }}">
+        <h1> § </h1>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-</body>
-</html>
 
-<style>
-    .header {
-        text-align: center;
-        padding: 25px;
-        background-color: rgb(140, 224, 255);
-    }
-    .title {
-        text-align: center;
-        font-size: 50px;
-        font-family: 新細明體;
-        margin: 20px;
-    }
-    .data {
-        position: relative;
-        font-size: 30px;
-        width: 1040px;
-        padding: 20px;
-        left: 50%;
-        transform: translate(-50%, 0);
-        background-color: yellow;
-    }
-    .description {
-        position: relative;
-        font-size: 24px;
-        width: 1040px;
-        padding: 20px;
-        margin-bottom: 20px;
-        left: 50%;
-        transform: translate(-50%, 0);
-        background-color: aquamarine;
-    }
-    .footer{
-        text-align: center; 
-        padding: 20px;
-        background-color: pink;
-    }
-</style>
+    <div class="data">
+        研究專長：{{ prof.research }}<br>
+        開課：{{ prof.lectures }}
+    </div>
+
+    <div class="description">
+        簡介：<br>{{ prof.description }}
+    </div>
+{% endblock %}
