@@ -1,10 +1,12 @@
 {% extends 'simple_base.html' %}
+{% load static %}
 
 {% block pageTitle %}
 {{ course.name }}的介紹
 {% endblock %}
 
 {% block content %}
+<div class="bg">
     <div class="title">
         <h1> § </h1>
         ◤◢【{{ course.name }}】◣◥
@@ -18,5 +20,12 @@
     <div class="description">
         簡介：<br>{{ course.description }}
     </div>
+    <br>
+</div>
+<style>
+    .bg{
+        background-image: url("{% static 'images/course_x3.png' %}");
+    }
+</style>
 {% endblock %}
 

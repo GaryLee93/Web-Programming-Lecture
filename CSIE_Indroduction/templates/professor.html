@@ -1,23 +1,34 @@
 {% extends 'simple_base.html' %}
+{% load static %}
 
 {% block pageTitle %}
 {{ prof.name }}教授的介紹
 {% endblock %}
 
 {% block content %}
-    <div class="title">
-        <h1 style="font-family: 新細明體;">▁▂▃▄▅▆▇█{% if prof.title != '無'%}【{{ prof.title }}】{% endif %} {{ prof.name }} 教授 █▇▆▅▄▃▂▁</h1>
-        <h1> § </h1>
-        <img src="{{ prof.pic.url }}">
-        <h1> § </h1>
-    </div>
+        <div class="title">
+            <h1 style="font-family: 新細明體; background-color: white;">▁▂▃▄▅▆▇█{% if prof.title != '無'%}【{{ prof.title }}】{% endif %} {{ prof.name }} 教授 █▇▆▅▄▃▂▁</h1>
+            <div class="bg">
+                <h1> § </h1>
+                <img src="{{ prof.pic.url }}">
+                <h1> § </h1>
+            </div>
+        </div>
 
-    <div class="data">
-        研究專長：{{ prof.research }}<br>
-        開課：{{ prof.lectures }}
-    </div>
+    <div class="bg">
+        <div class="data">
+            研究專長：{{ prof.research }}<br>
+            開課：{{ prof.lectures }}
+        </div>
 
-    <div class="description">
-        簡介：<br>{{ prof.description }}
+        <div class="description">
+            簡介：<br>{{ prof.description }}
+        </div>
+        <br>
     </div>
+    <style>
+        .bg{
+            background-image: url("{% static 'images/professor_x3.png' %}");
+        }
+    </style>
 {% endblock %}
